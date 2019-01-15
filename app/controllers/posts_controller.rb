@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+   
+    def index
+        @posts = Post.all # This will grab all the Posts from the Database
+    end
+   
     def new
         @post = Post.new
     end

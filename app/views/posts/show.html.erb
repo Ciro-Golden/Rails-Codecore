@@ -7,3 +7,5 @@ Title: <%= @post.title %>
 <p>
 Description: <%= @post.description%>
 </p>
+<%= link_to "Edit this Posting", edit_post_path(@post) %> | 
+<%= link_to "Back to Post Listing", posts_path %>
