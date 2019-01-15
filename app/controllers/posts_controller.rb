@@ -4,11 +4,20 @@ class PostsController < ApplicationController
     end
 
    def create
-    # render plain: params[:post].inspect
     @post = Post.new(post_params)
-    @post.save
-    redirect_to post_show(@post)
+    if @post.save
+    flash[:notice] = "Post was successfully created!"
+    redirect_to post_path(@post)
+    else
+        render 'new'
+    # @post.save
+    end
    end
+
+   def show
+    @post = Post.find(params[:id])
+   end
+
 
 
 
