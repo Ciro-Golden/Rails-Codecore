@@ -1,21 +1,21 @@
 <h1>Listing All Posts</h1>
-<p>
-<%= link_to "Create new Post", new_post_path %>
-</p>
-<table>
-    <tr>
-    <th>Title</th>
-    <th>Description</th>
-    </tr>
 
+<% @posts.each do |post| %>
+<div class="card">
+<div class="col-sm-12 col-sm-offset-2">
+ <div class="well well-lg">
+   <div class="card-header">
 
-    <% @posts.each do |post| %>
-    <tr>
-    <td><%= post.title %></td>
-    <td><%= post.description %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Show', post_path(post) %></td>
-    <td><%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: "Are you sure?"} %></td>
-    </tr>
+    <%= link_to post.title, post_path(post) %>
+    </div>
+    <div class="card-body">
+      <%= truncate(post.description, length: 100) %>
+    </div>
+    <div class="post-actions">
+        <%= link_to "Edit this Posting", edit_post_path(post), class: "btn btn-sm btn-primary" %> 
+        <%= link_to "Delete this Post", post_path(post), method: :delete, data: { confirm: "Are you sure you want to Delete the Post?"}, class: "btn btn-sm btn-danger" %>
+    </div>
+    </div>
+    </div>
+    </div>
     <% end %>
-</table>

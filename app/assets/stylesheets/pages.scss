@@ -31,6 +31,17 @@
     padding-top: 5px;
 }
 
+.card-header {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card-body {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .description {
     margin-top: 0;
 }
