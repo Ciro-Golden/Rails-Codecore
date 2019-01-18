@@ -1,11 +1,11 @@
-<h1>Showing selected Posts</h1>
-
-<p>
-Title: <%= @post.title %>
-</p>
-
-<p>
-Description: <%= @post.description%>
-</p>
-<%= link_to "Edit this Posting", edit_post_path(@post) %> | 
-<%= link_to "Back to Post Listing", posts_path %>
+<h2 align="center">Title: <%= @post.title %></h2>
+<div class="well col-sm-8 col-sm-offset-2">
+  <h4 class="description"><strong>Description:</strong></h4>
+  <hr>
+  <%= simple_format(@post.description) %>
+ <div class="post-actions">
+   <%= link_to "Edit this Posting", edit_post_path(@post), class: "btn btn-sm btn-primary" %> 
+   <%= link_to "Delete this Post", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to Delete the Post?"}, class: "btn btn-sm btn-danger" %>
+    <%= link_to "View all Posts", posts_path, class: "btn btn-sm btn-success" %>
+    </div>
+   </div>
