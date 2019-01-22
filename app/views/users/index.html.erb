@@ -1,5 +1,7 @@
 <h1>All Posts From Bloggers</h1>
 <div>
+  <%= will_paginate @posts, :page_links => false %>
+
     <% @users.each do |user| %>
         <ul class="listing">
           <div class="row">
@@ -13,5 +15,7 @@
         </div>
     </ul>
 
-    <% end %>
+ <% end %>
+ <%= will_paginate @posts, :page_links => false %>
+
 </div>

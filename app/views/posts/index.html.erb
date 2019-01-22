@@ -1,3 +1,8 @@
 <h1>Listing All Posts</h1>
-
-<%= render 'post', obj: @posts %> <!-- for this post partial use @post for the value for OBJ.--
+<div>
+  <%= will_paginate @posts, :page_links => false %>
+</div>
+<%= render 'post', obj: @posts %> 
+<div>
+  <%= will_paginate @posts, :page_links => false %>
+</div>

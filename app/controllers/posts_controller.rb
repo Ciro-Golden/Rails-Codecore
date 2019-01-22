@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
     
     def index
-        @posts = Post.all # This will grab all the Posts from the Database
+        @posts = Post.paginate(:page => params[:page], :per_page => 5) # This will grab all the Posts from the Database
     end
    
     def new
