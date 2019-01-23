@@ -10,8 +10,16 @@
             <%= link_to "Posts", posts_path, class: "nav-link", id:"post-list" %>
 
         </li>
-         <li class="nav-item">
+        <!--  <li class="nav-item">
             <a class="nav-link" href="">Sign-In</a>
-        </li>
+        </li>-->
+            <% if logged_in? %>
+          <li class="nav-link"><%= link_to "Log Out", logout_path, method: :delete %></li>
+          <% else %>
+
+             <li class="nav-link"><%= link_to "Log In", login_path %></li>
+             <li class="nav-link"><%= link_to "Sign In", signup_path %></li>
+            <% end %>
+        
     </ul>
 </nav>	
