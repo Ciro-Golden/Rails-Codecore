@@ -40,6 +40,7 @@ end
 
 
 def destroy 
+    @post = current_user.comments.find(params[:id])
     @post.destroy
     flash[:danger] = "Post was successfully deleted"
     redirect_to posts_path

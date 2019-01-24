@@ -14,12 +14,14 @@
           last updated: <%= time_ago_in_words(post.updated_at) %> ago </small>
       </div>  
     </div>
+    <% if logged_in? && current_user === post.user %>
     <div class="post-actions">
         <%= link_to "Edit this Posting", edit_post_path(post), class: "btn btn-sm btn-primary" %> 
         <%= link_to "Delete this Post", post_path(post), method: :delete, 
         data: { confirm: "Are you sure you want to Delete the Post?"}, 
         class: "btn btn-sm btn-danger" %>
     </div>
+    <% end %>
     </div>
     </div>
     </div>

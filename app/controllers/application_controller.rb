@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
 
 
     def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id] #return this user if, session user id (there is a user id that stored in our Database then find the user in our Database)
+      @current_user ||= User.find(session[:user_id]) if session[:user_id] 
     end
-
+# return this user if, session user id (there is a user id that stored in our Database then find the user in our Database)
 
     def logged_in?
         !!current_user
