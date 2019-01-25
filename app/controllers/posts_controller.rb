@@ -13,7 +13,7 @@ class PostsController < ApplicationController
    def create
     
     @post = Post.new(post_params)
-    @post.user = User.first # this is going to ensure, that my Post has a User.
+    @post.user = current_user # this is going to ensure, that my Post has a User.
     if @post.save
     flash[:success] = "Post was successfully created!"
     redirect_to post_path(@post)
